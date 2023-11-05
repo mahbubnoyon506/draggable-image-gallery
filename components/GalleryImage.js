@@ -17,7 +17,7 @@ const GalleryImage = ({
     <div
       key={index}
       className={
-        "group relative before:content-[''] before:absolute before:h-full before:w-full before:rounded-lg before:transition-colors before:cursor-move" +
+        "group relative before:content-[''] before:absolute before:h-full before:w-full before:rounded-lg before:transition-colors" +
         (index === 0 ? " md:col-span-2 md:row-span-2" : " col-span-1") +
         (selectThumbnails.find((photo) => photo.id === image.id)
           ? " opacity-100"
