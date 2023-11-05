@@ -1,4 +1,4 @@
-This is a [Daraggable Gallary](https://draggable-image-gallery-cyan.vercel.app/) project.
+This is a [Daraggable Image Gallary](https://draggable-image-gallery-cyan.vercel.app/) project.
 
 ## Getting Started
 
