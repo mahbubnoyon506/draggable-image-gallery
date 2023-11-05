@@ -8,6 +8,7 @@ import GalleryImage from "./GalleryImage";
 import { Inter } from "next/font/google";
 import images from "@/common/data/images";
 import GalleryHeader from "./GalleryHeader";
+import ImageUploader from "./ImageUploader";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -52,6 +53,19 @@ const Gallery = () => {
     setSelectThumbnails([]);
   };
 
+  const handleFileUpload = (e) => {
+    const selectedFiles = e.target.files;
+
+    const newImages = Array.from(selectedFiles).map((file, index) => {
+      const id = thumbnails.length + index + 1;
+      const thumbnail = URL.createObjectURL(file);
+
+      return { id, thumbnail };
+    });
+
+    setThumbnails([...thumbnails, ...newImages]);
+  };
+
 
   return (
     <main
@@ -83,6 +97,7 @@ const Gallery = () => {
                   draggedIndex={draggedIndex}
                 />
               ))}
+              <ImageUploader handleFileUpload={handleFileUpload} />
             </div>
           </section>
         </div>
